@@ -1,0 +1,96 @@
+Type: Component
+Name: fnf
+Provider:
+  - Alibaba
+Version: 0.0.1
+Description:
+  zh: 快速部署阿里云 FNF（Serverless Workflow） 项目
+  en: Rapid deployment of Alibaba cloud FNF (serverless workflow) project
+HomePage: https://www.aliyun.com
+Tags:
+  - zh: FNF
+    en: FNF
+Category: 基础云服务
+Service:
+  - Name: 其他
+    Authorities: #权限描述
+      - zh: FNF 全部权限
+        en: FNF all rights
+Commands: # 指令，格式为指令：指令描述，例如：
+  deploy:
+    zh: 创建FNF
+    en: Create FNF
+  remove:
+    zh: 删除FNF
+    en: Remove FNF
+  schedule:
+    zh: 定时调度相关操作
+    en: Schedule related operations
+  execution:
+    zh: 流程相关操作
+    en: Execution related operations
+Properties:
+  Region:
+    Description:
+      zh: 地域
+      en: Region
+    Required: true
+    Type:
+      - Enum:
+          - cn-beijing
+          - cn-hangzhou
+          - cn-shanghai
+          - cn-qingdao
+          - cn-zhangjiakou
+          - cn-huhehaote
+          - cn-shenzhen
+          - cn-chengdu
+          - cn-hongkong
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-southeast-3
+          - ap-southeast-5
+          - ap-northeast-1
+          - eu-central-1
+          - eu-west-1
+          - us-west-1
+          - us-east-1
+          - ap-south-1
+  Name:
+    Description:
+      zh: Workflow 名字
+      en: Workflow Name
+    Required: true
+    Type:
+      - String
+  Description:
+    Description:
+      zh: Workflow 描述
+      en: Workflow Description
+    Required: true
+    Type:
+      - String
+  Type:
+    Description:
+      zh: 创建流程的类型，取值：FDL。
+      en: 'The type of creation process, value: FDL.'
+    Required: true
+    Default: FDL
+    Type:
+      - Enum:
+          - FDL
+  Definition:
+    Description:
+      zh: Definition 本地路径
+      en: Definition local dir
+    Required: true
+    Type:
+      - String
+  RoleArn:
+    Description:
+      zh: 可选参数，流程执行所需的资源描述符信息，用于在任务执行时 FnF 进行 assume role。
+      en: Optional parameter, resource descriptor information required for process execution. It is used to perform the assess role of FNF during task execution.
+    Required: false
+    Example: acs:ram:${region}:${accountID}:${role}
+    Type:
+      - String

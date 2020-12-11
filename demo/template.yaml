@@ -1,0 +1,9 @@
+MyFNFDemo:
+  Component: fnf
+  Provider: alibaba
+  Access: release
+  Properties:
+    Region: cn-hangzhou
+    Name: test
+    Description: Description
+    Definition: ./flow.yaml
