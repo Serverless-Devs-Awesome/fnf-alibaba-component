@@ -29,6 +29,9 @@ class MyComponent extends Component {
             description: `Usage: s ${inputs.Project.ProjectName} deploy [command]`,
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         await this.init()
@@ -124,6 +127,9 @@ class MyComponent extends Component {
             description: `Usage: s ${inputs.Project.ProjectName} remove [command]`,
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         await this.init()
@@ -167,6 +173,9 @@ class MyComponent extends Component {
                 desc: 'Input information path for this execution.'
             }]
         })
+
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
 
         const client = await this.getClient(inputs.Credentials)
 
@@ -230,6 +239,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -287,6 +299,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -339,6 +354,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -390,6 +408,9 @@ class MyComponent extends Component {
                 desc: 'The execution status of the filter you want to filter. The status supports the following fields: Running/Stopped/Succeeded/Failed/TimedOut.'
             }]
         })
+
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
 
         const client = await this.getClient(inputs.Credentials)
 
@@ -507,6 +528,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -582,6 +606,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -645,6 +672,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -684,6 +714,9 @@ class MyComponent extends Component {
                 desc: 'The name of the scheduled schedule.'
             }]
         })
+
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
 
         const client = await this.getClient(inputs.Credentials)
 
@@ -725,6 +758,9 @@ class MyComponent extends Component {
             }]
         })
 
+        // 获取密钥信息
+        inputs.Credentials = await this.credentials(inputs)
+
         const client = await this.getClient(inputs.Credentials)
 
         // 将Args转成Object
@@ -760,6 +796,7 @@ class MyComponent extends Component {
     }
 
     async execution(inputs) {
+
         const args = this.args(inputs.Args, [], []);
         if (args.Commands.length > 0) {
             if (args.Commands[0] == "add") {
